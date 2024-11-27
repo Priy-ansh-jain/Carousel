@@ -30,12 +30,12 @@ const Carousel = () => {
         <CourseContainer />
         <CourseContainer />
         <CourseContainer />
-        <CourseContainer /> {/* Added 4th slide */}
+        <CourseContainer />
       </Slider>
 
       {/* Custom Pagination Dots (Positioned at bottom-left of the image) */}
       <div className="absolute bottom-5 left-5 flex gap-2">
-        {[...Array(4)].map((_, index) => ( // Create 4 dots
+        {[...Array(4)].map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)} // On click, go to the slide

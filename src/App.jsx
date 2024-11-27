@@ -1,11 +1,32 @@
+// import CardLayout from "./components/aipage/CardLayout";
+import SliderComponent from "./components/aipage/SliderComponent";
+
+import ToggleButton from "./components/aipage/ToggleButton";
 import Carousel from "./components/Carousel";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 
 const App = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
-      <Carousel />
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+
+            <>
+              {/* {/* <CardLayout /> */}
+              {/* <Navbar /> */}
+              <SliderComponent />
+              {/* <ToggleButton /> */}
+            </>
+          }
+        />
+
+
+      </Routes>
+    </Router>
   );
 };
 
