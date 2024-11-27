@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const slidesData = [
   {
@@ -51,6 +51,15 @@ const Slider = () => {
   const isMouseDown = useRef(false);
   const startX = useRef(0);
 
+  // Change slide every 2 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 2000);
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slidesData.length);
   };
@@ -71,7 +80,6 @@ const Slider = () => {
   const handleMouseMove = (e) => {
     if (!isMouseDown.current) return;
     const deltaX = e.clientX - startX.current;
-
     if (deltaX > 50) {
       nextSlide();
       startX.current = e.clientX;
@@ -94,27 +102,27 @@ const Slider = () => {
           const isActive = index === currentSlide;
           const isPrev = index === (currentSlide - 1 + slidesData.length) % slidesData.length;
           const isNext = index === (currentSlide + 1) % slidesData.length;
-
           return (
             <div
               key={index}
-              className={`absolute transition-transform duration-500 ${isActive ? 'transform scale-110 z-20 opacity-100'
-                : isPrev ? 'transform scale-100 -translate-x-20 z-10 '
-                  : isNext ? 'transform scale-100 translate-x-20 z-10 '
+              className={`absolute transition-all duration-700 ease-in-out transform ${isActive
+                ? 'scale-105 z-20 opacity-100'
+                : isPrev
+                  ? 'scale-95 -translate-x-20 z-10 '
+                  : isNext
+                    ? 'scale-95 translate-x-20 z-10 '
                     : 'opacity-0'
                 }`}
-              style={{ width: '700px' }} // Increased width of cards
+              style={{ width: '700px' }}
             >
               <div className="p-6 bg-gradient-to-r border-purple-600 border-2 from-blue-950 to-cyan-950 shadow-xl text-white rounded-lg flex justify-center items-center">
                 <div>
                   <h2 className="text-xl font-bold mb-2">{slide.title}</h2>
                   <p>{slide.description}</p>
                 </div>
-                <div className="flex items-center justify-center mb-4 w-48 ">
+                <div className="flex items-center justify-center mb-4 w-48">
                   {slide.icon}
                 </div>
-
-
               </div>
             </div>
           );
@@ -125,8 +133,8 @@ const Slider = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${currentSlide === index ? ' bg-neutral-700' : 'bg-gray-200'}`}
-          />
+            className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-gray-400'}`}
+          ></button>
         ))}
       </div>
     </div>
