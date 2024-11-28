@@ -104,7 +104,7 @@ const DropdownCard = () => {
                         value={cards[selectedCard].question1}
                         onChange={(e) => handleQuestionChange(e, 1)}
                         placeholder="Question 1"
-                        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 pl-10 bg-gray-300"
+                        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 pl-10 bg-[#EBEBEB]"
                       />
                       <img
                         src={WriteIcon}

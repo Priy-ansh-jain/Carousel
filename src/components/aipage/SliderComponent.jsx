@@ -120,7 +120,7 @@ const Slider = () => {
                   <h2 className="text-xl font-bold mb-2">{slide.title}</h2>
                   <p>{slide.description}</p>
                 </div>
-                <div className="flex items-center justify-center mb-4 w-48">
+                <div className="flex items-center justify-center mb-4 w-52">
                   {slide.icon}
                 </div>
               </div>
