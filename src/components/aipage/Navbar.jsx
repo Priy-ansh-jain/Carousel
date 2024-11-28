@@ -1,9 +1,9 @@
-import '../../css/navbar.css'
+import "../../../css/navbar.css"
 
-import image1 from '../../assets/NavImages/image1.png';
-import image2 from '../../assets/NavImages/Aspireit.png';
-import image3 from '../../assets/NavImages/Ellipse 1872.svg';
-import image4 from '../../assets/NavImages/Layila.svg';
+import image1 from '../../../assets/NavImages/image1.png';
+import image2 from '../../../assets/NavImages/Aspireit.png';
+import image3 from '../../../assets/NavImages/Ellipse 1872.svg';
+import image4 from '../../../assets/NavImages/Layila.svg';
 
 const Navbar = () => {
   return (

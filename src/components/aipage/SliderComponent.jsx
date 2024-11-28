@@ -92,7 +92,7 @@ const Slider = () => {
   return (
     <div
       ref={sliderRef}
-      className="relative w-full max-w-8xl mx-auto"
+      className="relative w-full mx-auto -top-10"
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
@@ -115,7 +115,7 @@ const Slider = () => {
                 }`}
               style={{ width: '700px' }}
             >
-              <div className="p-6 bg-gradient-to-r border-purple-600 border-2 from-blue-950 to-cyan-950 shadow-xl text-white rounded-lg flex justify-center items-center">
+              <div className="p-10 bg-gradient-to-r border-purple-600 border-2 from-blue-950 to-cyan-950 shadow-xl text-white rounded-lg flex justify-center items-center">
                 <div>
                   <h2 className="text-xl font-bold mb-2">{slide.title}</h2>
                   <p>{slide.description}</p>
@@ -133,7 +133,7 @@ const Slider = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-gray-400'}`}
+            className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-neutral-700' : 'bg-gray-400'}`}
           ></button>
         ))}
       </div>

@@ -2,9 +2,12 @@
 import SliderComponent from "./components/aipage/SliderComponent";
 
 import ToggleButton from "./components/aipage/ToggleButton";
-import Carousel from "./components/Carousel";
+// import Carousel from "./components/icons/Carousel";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/aipage/Navbar";
+import SchedulingComponent from "./components/aipage/SchedulingComponent";
+import DropdownCard from "./components/aipage/dropdowncard";
+import InterviewButton from "./components/aipage/interviewButton/InterviewButton";
 
 
 const App = () => {
@@ -17,16 +20,19 @@ const App = () => {
 
             <>
               {/* {/* <CardLayout /> */}
-              {/* <Navbar /> */}
+              <Navbar />
+              <SchedulingComponent />
+              <ToggleButton />
               <SliderComponent />
-              {/* <ToggleButton /> */}
+              <DropdownCard />
+              <InterviewButton />
             </>
           }
         />
 
 
       </Routes>
-    </Router>
+    </Router >
   );
 };
 

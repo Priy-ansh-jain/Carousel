@@ -4,7 +4,7 @@ const ToggleButton = () => {
   const [selected, setSelected] = useState("nonTechnical");
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="py-8 flex items-center justify-center">
       <div className="h-[58.5px] w-[600px] flex bg-gray-200 rounded-full p-1 space-x-4">
         {/* Non-Technical Button */}
         <button
